@@ -20,7 +20,7 @@ class MyTextMessageConsumer : IConsumer<TextMessage>
     public Task Consume(ConsumeContext<TextMessage> context)
     {
         var textMessage = context.Message;
-        Console.WriteLine("Got message {0}", textMessage.Text);
+        Console.WriteLine("Got message {0} {1}", context.MessageId, textMessage.Text);
 
         return Task.CompletedTask;
     }
